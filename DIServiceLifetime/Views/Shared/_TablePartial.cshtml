@@ -1,0 +1,30 @@
+﻿@model Dictionary<string, string>;
+
+@if (Model != null && @ViewBag.ComplexService != null)
+{
+    <table class="table w-auto">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Singleton</th>
+                <th scope="col">Transient</th>
+                <th scope="col">Scoped</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">From controller</th>
+                @foreach (var item in Model)
+                {
+                    <td>@item.Value</td>
+                }
+            </tr>
+            <tr>
+                <th scope="row">From service</th>
+                <td>@ViewBag.ComplexService.SingletonService.Id</td>
+                <td>@ViewBag.ComplexService.TransientService.Id</td>
+                <td>@ViewBag.ComplexService.ScopedService.Id</td>
+            </tr>
+        </tbody>
+    </table>
+}

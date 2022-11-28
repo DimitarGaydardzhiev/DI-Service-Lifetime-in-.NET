@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="GET" asp-controller="Home" asp-action="Data">
+    <button type="submit" class="btn btn-success text-center">Get services IDs</button>
+</form>
+
+<partial name="/Views/Shared/_TablePartial.cshtml">
